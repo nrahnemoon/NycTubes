@@ -39,9 +39,19 @@ function plotStations() {
         	lat: parseFloat(station[stationLatitudeIndex]),
         	lng: parseFloat(station[stationLongitudeIndex])
         };
+        var image = {
+          url: 'https://github.com/nrahnemoon/NycTubes/blob/master/images/stationSymbol.png?raw=true',
+          // This marker is 20 pixels wide by 32 pixels high.
+          size: new google.maps.Size(26, 26),
+          // The origin for this image is (0, 0).
+          origin: new google.maps.Point(0, 0),
+          // The anchor for this image is the base of the flagpole at (0, 32).
+          anchor: new google.maps.Point(13, 13)
+        };
         var marker = new google.maps.Marker({
             position: stationLatLng,
             map: map,
+            icon: image,
             title: station[stationNameIndex]
         });
     }
